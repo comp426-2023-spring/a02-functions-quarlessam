@@ -12,7 +12,6 @@
   "description": "This assignment will help you learn to create an installable Node.js command line utility.",
   "version": "1.0.0",
   "main": "cli.js",
-  "devDependencies": {},
   "scripts": {
     "test": "galo.sh -h"
   },

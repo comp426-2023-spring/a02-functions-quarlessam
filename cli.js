@@ -20,7 +20,7 @@ if(args.h) {
   process.exit()
 }
 
-const timezone = moment.tz.guess()
+const timezone = args.z || moment.tz.guess()
 console.log(timezone)
 const latitude = args.n || (-1 * args.s)
 const longitude = args.e || (-1 * args.w)
@@ -29,6 +29,29 @@ const response = await fetch('https://api.open-meteo.com/v1/forecast?latitude=' 
 const data = await response.json()
 
 if (args.j) {
-  process.stdout.write(data + "\n")
+  process.stdout.write(JSON.stringify(data, null, 2))
   process.exit()
+}
+
+var day;
+if (args.d == null) {
+  day = 1
+} else {
+  day = args.d
+}
+let day_phrase = ""
+if (day > 1) {
+  day_phrase = 'in ' + day + ' days.\n'
+}
+else if (day) {
+  day_phrase = 'tomorrow.\n'
+}
+else {
+  day_phrase = 'today.\n'
+}
+
+if (data.daily.precipitation_hours[day]) {
+  process.stdout.write('You might need your galoshes ' + day_phrase)
+} else {
+  process.stdout.write('You will not need your galoshes ' + day_phrase)
 }
