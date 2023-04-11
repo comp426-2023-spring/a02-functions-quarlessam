@@ -6,8 +6,6 @@ import fetch from 'node-fetch'
 
 const args = minimist(process.argv.slice(2))
 
-console.log(args)
-
 if(args.h) {
   let helptext = `Usage: galosh.js [options] -[n|s] LATITUDE -[e|w] LONGITUDE -z TIME_ZONE
     -h            Show this help message and exit.
@@ -21,7 +19,6 @@ if(args.h) {
 }
 
 const timezone = args.z || moment.tz.guess()
-console.log(timezone)
 const latitude = args.n || (-1 * args.s)
 const longitude = args.e || (-1 * args.w)
 
