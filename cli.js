@@ -16,7 +16,7 @@ if(args.h) {
     -z            Time zone: uses tz.guess() from moment-timezone by default.
     -d 0-6        Day to retrieve weather: 0 is today; defaults to 1.
     -j            Echo pretty JSON from open-meteo API and exit.`
-  console.log(helptext)
+  process.stdout.write(helptext)
   process.exit()
 }
 
