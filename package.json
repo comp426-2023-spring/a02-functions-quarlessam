@@ -13,7 +13,7 @@
   "version": "1.0.0",
   "main": "cli.js",
   "scripts": {
-    "test": "galosh.js -h"
+    "test": "node cli.js -n 35.92 -w 79.05 -z America/New_York"
   },
   "repository": {
     "type": "git",
