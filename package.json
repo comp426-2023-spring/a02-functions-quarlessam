@@ -13,7 +13,7 @@
   "version": "1.0.0",
   "main": "cli.js",
   "scripts": {
-    "test": "galo.sh -h"
+    "test": "galosh.js -h"
   },
   "repository": {
     "type": "git",
